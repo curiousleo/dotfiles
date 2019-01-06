@@ -4,6 +4,9 @@
 # Use 'dotfiles' to manage dotfiles git repository
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+# Activate direnv
+eval "$(direnv hook bash)"
+
 alias ls='ls --color=auto'
 
 # History configuration
