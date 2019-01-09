@@ -28,6 +28,16 @@ if ! shopt -oq posix; then
   fi
 fi
 
-source /usr/share/git/git-prompt.sh
-export GIT_PS1_SHOWDIRTYSTATE=1
-PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+# Git prompt
+GIT_PS1_SHOWDIRTYSTATE=1
+if [ -f /usr/share/git/git-prompt.sh ]; then
+  . /usr/share/git/git-prompt.sh
+elif [ -f /usr/lib/git-core/git-sh-prompt ]; then
+  . /usr/lib/git-core/git-sh-prompt
+fi
+
+if [ $(declare -f __git_ps1 > /dev/null ; echo $?) ]; then
+  PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+else
+  PS1='[\u@\h \W]\$ '
+fi
