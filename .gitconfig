@@ -1,3 +1,9 @@
+[push]
+	default = simple
+[merge]
+	renamelimit = 10000
+	tool = vimdiff
+	conflictStyle = diff3
 [include]
 	path = .gitconfig.local
 [core]
