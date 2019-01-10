@@ -41,3 +41,5 @@ if [ $(declare -f __git_ps1 > /dev/null ; echo $?) ]; then
 else
   PS1='[\u@\h \W]\$ '
 fi
+
+PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
