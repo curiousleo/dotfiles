@@ -1,2 +1,4 @@
 [include]
 	path = .gitconfig.local
+[core]
+	excludesFile = /home/leo/.gitignore_global
