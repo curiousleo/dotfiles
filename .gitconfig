@@ -4,5 +4,7 @@
 	renamelimit = 10000
 	tool = vimdiff
 	conflictStyle = diff3
+[core]
+	excludesFile = /home/leo/.gitignore_global
 [include]
 	path = .gitconfig.local
