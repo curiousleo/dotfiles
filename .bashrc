@@ -3,11 +3,11 @@
 
 # Use 'dotfiles' to manage dotfiles git repository
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias fabric_pid=jps | grep GameLauncher | cut -d' ' -f1
+alias ls='ls --color=auto'
 
 # Activate direnv
 eval "$(direnv hook bash)"
-
-alias ls='ls --color=auto'
 
 # History configuration
 HISTCONTROL=ignoreboth
@@ -41,3 +41,5 @@ if [ $(declare -f __git_ps1 > /dev/null ; echo $?) ]; then
 else
   PS1='[\u@\h \W]\$ '
 fi
+
+PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
