@@ -1,10 +1,11 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
-
+filetype plugin on
 syntax on
 
 set autowrite
 set wildmenu
+
+set smartindent
 
 set undolevels=1000
 
