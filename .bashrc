@@ -1,6 +1,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+EDITOR=vim
+
 # Use 'dotfiles' to manage dotfiles git repository
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias fabric_pid=jps | grep GameLauncher | cut -d' ' -f1
@@ -43,3 +45,5 @@ else
 fi
 
 PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
+
+PATH="${HOME}/.local/bin/:${PATH}"
