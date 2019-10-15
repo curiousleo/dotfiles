@@ -1,5 +1,7 @@
 [push]
 	default = simple
+[pull]
+	ff = only
 [merge]
 	renamelimit = 10000
 	tool = vimdiff
